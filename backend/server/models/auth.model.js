@@ -17,12 +17,6 @@ const LoginSchema = new mongoose.Schema({
       type: String,
       required: [true, "email is required"],
       unique:true,
-      validate: {
-        //(val) => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val)
-        //
-        validator: val => /^[\w-]+(\.[\w-]+)+@[epn]+(\.[edu]+)*(\.[ec]{2,})$/.test(val),
-        message: "Please enter a valid email",
-      },
     },
 
     password: {
@@ -30,7 +24,7 @@ const LoginSchema = new mongoose.Schema({
       required: [true, "Password is required"],
       minlength: [5, "Password must be 8 character or longer"],
     },
-    
+
   },{ timestamps: true });
 
   // uso de virtual --> es un campo que se llena pero no se guarda en la base de datos.
