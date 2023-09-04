@@ -35,6 +35,13 @@ LoginSchema.virtual("confirmPassword")
   .get(() => this._confirmPassword)
   .set(value => this._confirmPassword = value);
 
+//uso del gancho pre --> para validar la contrasena con la contrasena ingresada virtualmente
+LoginSchema.pre('validate', function(next) {
+  if(this.password !== this.confirmPassword){
+    this.invalidate('confirmPassword','Password must match confirm password')
+  }
+  next();
+});
 
 // uso del gancho pre ---> antes de que el usuario se guarde en la base de datos hace un hash a la contrasena
 // desencadena el pre-validate
