@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const LoginSchema = new mongoose.Schema({
+
     fname: {
       type: String,
       required: [true, "First name is required"],
@@ -23,11 +24,13 @@ const LoginSchema = new mongoose.Schema({
         message: "Please enter a valid email",
       },
     },
+
     password: {
       type: String,
       required: [true, "Password is required"],
       minlength: [5, "Password must be 8 character or longer"],
     },
+    
   },{ timestamps: true });
 
   // uso de virtual --> es un campo que se llena pero no se guarda en la base de datos.
