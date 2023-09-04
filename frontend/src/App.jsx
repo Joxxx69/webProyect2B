@@ -22,8 +22,6 @@ function App() {
             <Navbar/>
             <Routes>
               <Route path='/' element={<MainPage/>}/>
-              <Route path='/login' element={<Signin/>}/>
-              <Route path='/register' element={<Signup/>}/>
               <Route path='/registerFurniture' element={<RequireAuth permission={'admin'}> <AddFurniture/> </RequireAuth> }></Route>
               <Route path='/registerCategory' element={<RequireAuth permission={'admin'} > <CreateCategory/> </RequireAuth>}></Route>
               <Route path='/furniture/price/range' element={<FurniturePrice/>}></Route>
