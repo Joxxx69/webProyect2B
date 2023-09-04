@@ -58,7 +58,7 @@ const getAll = (req,res)=>{
 }
 
 
-module.exports = {Register, Login, getAll}
+module.exports = {Register, Login, getAll} 
 
 
 
