@@ -16,7 +16,13 @@ const LoginSchema = new mongoose.Schema({
     email: {
       type: String,
       required: [true, "email is required"],
-      unique:true,
+      unique:true, 
+      validate: {
+        //(val) => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val)
+        //
+        validator: val => /^[\w-]+(\.[\w-]+)+@[epn]+(\.[edu]+)*(\.[ec]{2,})$/.test(val),
+        message: "Please enter a valid email",
+      },
     },
 
     password: {
