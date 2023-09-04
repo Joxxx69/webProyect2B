@@ -27,7 +27,7 @@ const ShowImage = ({photoID, furniture}) => {
     );
 }
 
-export default ShowImage;
+export default ShowImage; 
 
 
 
