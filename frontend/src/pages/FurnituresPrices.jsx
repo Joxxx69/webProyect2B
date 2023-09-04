@@ -42,19 +42,19 @@ const FurniturePrice = () => {
       <div className="conatiner mt-5">
         <div className="row">
           <div className="col-md-8 offset-md-2">
-            <h2 className="mb-4">ange search</h2>
+            <h2 className="mb-4">Range search</h2>
 
-            <form className="mb-3" onSubmit={RangeSubmit}>
-              <div className="form-row">
-                <div className="form-group col-md-3">
+            <form className="mb-3"   onSubmit={RangeSubmit}>
+              <div className="form-row" style={{display:'flex', marginBottom:'10px'}} >
+                <div className="form-group " style={{marginRight:'10px'}}>
                   <label className="text-muted">Upper limit</label>
                   <input  type={"text"} className="form-control" name="upperLimit" value={upperLimit} onChange={SearchChange}/>
                 </div>
-                <div className="form-group col-md-3">
+                <div className="form-group" style={{marginRight:'10px'}}>
                   <label className="text-muted">Lower limit</label>
                   <input type={'text'} className="form-control" name={'lowerLimit'} value={lowerLimit} onChange={SearchChange}/>
                 </div>
-                <div className="form-group col-md-3">
+                <div className="form-group " style={{marginRight:'10px'}}>
                   <label className="text-muted">Category</label>
                   <select
                       onChange={SearchChange}
